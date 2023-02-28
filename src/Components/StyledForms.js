@@ -136,6 +136,7 @@ function StyledForms() {
                     InputType="text"
                     InputPlaceholder="First Name"
                     margintop="30px"
+                    InputName="Firstname"
                   />
 
                   <InputFieldBox
@@ -143,6 +144,7 @@ function StyledForms() {
                     InputType="text"
                     InputPlaceholder="Last Name"
                     margintop="30px"
+                    InputName="Lastname"
                   />
 
                   <InputFieldBox
@@ -150,6 +152,7 @@ function StyledForms() {
                     InputType="email"
                     InputPlaceholder="Email Address"
                     margintop="30px"
+                    InputName="Email"
                   />
 
                   <InputFieldBox
@@ -157,6 +160,7 @@ function StyledForms() {
                     InputType="text"
                     InputPlaceholder="Phone Number"
                     margintop="30px"
+                    InputName="Phonenumber"
                   />
 
                   <DisplaFlex style={{ columnGap: "20px" }}>
@@ -166,6 +170,7 @@ function StyledForms() {
                         InputType="text"
                         InputPlaceholder="Current Salary"
                         margintop="30px"
+                        InputName="CurrentSalary"
                       />
                     </div>
                     <div className="w-50">
@@ -174,6 +179,7 @@ function StyledForms() {
                         InputType="text"
                         InputPlaceholder="Expected Salary"
                         margintop="30px"
+                        InputName="ExpectedSalary"
                       />
                     </div>
                   </DisplaFlex>
@@ -291,6 +297,7 @@ const InputFieldBox = (Props) => {
             className="effect-24"
             type={Props.InputType}
             placeholder={Props.InputPlaceholder}
+            name={Props.InputName}
           />
           <label>{Props.InputLabelTitle}</label>
           <span className="focus-bg"></span>
@@ -347,9 +354,7 @@ function Selectbox(Props) {
         <ColumnThree className="input-effect">
           <InputSelect>
             {NoticePeriod.map((value, index) => (
-              <>
-                <option value={value}>{value}</option>
-              </>
+                <option value={value} key={index}>{value}</option>
             ))}
           </InputSelect>
         </ColumnThree>
